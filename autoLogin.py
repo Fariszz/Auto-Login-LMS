@@ -20,4 +20,9 @@ password_textbox.send_keys(password)
 login_button = driver.find_element_by_id("loginbtn")
 login_button.submit()
 
-time.sleep(2)
+html_list = driver.find_element_by_id("nav-drawer")
+items = html_list.find_elements_by_tag_name("li")
+
+for item in items:
+    text = item.text
+    print(text)
